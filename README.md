@@ -1,5 +1,6 @@
+
 <p align="center">
-  <img src="src="assets/logo/App.png"" alt="Insight AutoPower Logo" width="128" height="128" />
+  <img src="assets/logo/App.png" alt="Insight AutoPower Logo" width="128" height="128" />
 </p>
 
 <h1 align="center">Insight AutoPower</h1>
@@ -19,11 +20,11 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#supported-actions">Power Actions</a> •
+  <a href="#supported-power-actions">Power Actions</a> •
   <a href="#scheduler-modes">Scheduler Modes</a> •
   <a href="#screenshots">Screenshots</a> •
   <a href="#installation--download">Installation</a> •
-    <a href="#arabic-documentation">الوصف بالعربية</a>
+  <a href="#الوصف-ودليل-الاستخدام-باللغة-العربية">الوصف بالعربية</a>
 </p>
 
 ---
@@ -39,7 +40,7 @@ Whether you need to shut down your PC after a multi-hour render, sleep after nig
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/main_window.png" alt="Insight AutoPower Main Window" width="900" />
+  <img src="main_window.png" alt="Insight AutoPower Main Window" width="900" />
   <br>
   <em>Cyber-Dark HUD Dashboard featuring the Circular Radial Countdown, Power Actions Selector, and Mode Configuration.</em>
 </p>
@@ -129,18 +130,18 @@ The Windows release files will be available from the [GitHub Releases page](http
 
 ---
 
-<br>
-
 <div dir="rtl">
 
 ## 🇸🇦 الوصف ودليل الاستخدام باللغة العربية
 
 ### نبذة عن البرنامج
+
 برنامج **Insight AutoPower** هو أداة مكتبية احترافية ومتقدمة لنظام التشغيل ويندوز (Windows 10 / 11)، صُممت خصيصاً لإدارة وجدولة طاقة الكمبيوتر بدقة متناهية وسهولة مطلقة. تم بناء البرنامج بأحدث تقنيات مايكروسوفت **.NET 10.0 (LTS)** مع واجهة مستخدم رسومية حديثة بالكامل ذات طابع رقمي جذاب (Cyber-Dark UI) تمنح المستخدم تجربة بصرية وعملية استثنائية.
 
 ---
 
 ### أبرز المميزات
+
 - **8 خيارات متكاملة للتحكم بالطاقة**:
   1. **إيقاف التشغيل (Shutdown)**: طلب إيقاف تشغيل ويندوز، ويجب حفظ العمل المفتوح مسبقًا.
   2. **إيقاف التشغيل بالكامل (Full Shutdown)**: تنفيذ إيقاف غير هجين؛ وقد يؤدي خيار الإغلاق الإجباري إلى فقدان الملفات غير المحفوظة.
@@ -150,26 +151,32 @@ The Windows release files will be available from the [GitHub Releases page](http
   6. **تسجيل الخروج (Log Off)**: إغلاق جلسة المستخدم الحالية.
   7. **قفل الشاشة (Lock Screen)**: حماية الخصوصية وقفل الجهاز بضغطة زر أو بمؤقت.
   8. **منع السكون (Keep System Awake / Don't Sleep)**: منع شاشة التوقف والنوم التلقائي أثناء التحميلات الطويلة وعمليات الرندر.
+
 - **4 أوضاع جدولة زمنية**:
   - **مؤقت تنازلي (Countdown)**: بالساعات والدقائق والثواني مع عداد دائري تفاعلي (Radial Progress Gauge).
   - **وقت وتاريخ محدد (Specific Time)**: تحديد توقيت دقيق لتنفيذ العملية.
   - **مهمة يومية متكررة (Daily Task)**: تنفيذ الإجراء في وقت ثابت كل يوم تلقائياً.
   - **كشف خمول الجهاز (Idle Detection)**: مراقبة نشاط لوحة المفاتيح والماوس، وتنفيذ الإجراء عند ترك الجهاز دون استخدام.
+
 - **نظام حماية وتنبيهات ذكي**:
   - إشعار تحذيري قبل التنفيذ مع إمكانية الإلغاء؛ تُراجع مدته ووظائفه في بناء الإصدار الفعلي.
   - تنبيه صوتي للتذكير.
   - خيار الإغلاق الإجباري للبرامج العالقة (Force close apps).
   - وضع صامت اختياري (Silent mode).
+
 - **التشغيل في شريط المهام (System Tray)**:
   - إمكانية تصغير البرنامج ليعمل بخفة في الخلفية مع قائمة سريعة للتحكم.
+
 - **سجل العمليات (History)**:
   - جدول تفصيلي يوثق كافة العمليات المنفذة ونتائجها وتواريخها.
+
 - **واجهة ثنائية اللغة**:
   - دعم كامل للغتين العربية والإنجليزية.
 
 ---
 
 ### التثبيت والتشغيل
+
 تُرفق ملفات التثبيت أو النسخة المحمولة في [صفحة الإصدارات](https://github.com/alarifi/InsightAutoPower/releases) بعد تجهيزها واختبارها. لا تفترض وجود إصدار قابل للتنزيل قبل نشره.
 
 - **نسخة التثبيت**: شغّل ملف المثبّت المعتمد من صفحة الإصدار.
