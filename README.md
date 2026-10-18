@@ -51,10 +51,10 @@ Whether you need to shut down your PC after a multi-hour render, sleep after nig
 
 - **🎨 Futuristic Cyber-Dark Interface**: Custom XAML UI inspired by telemetry cockpits, featuring high-contrast typography, neon status accents, and smooth feedback.
 - **⏱️ Dynamic Radial Countdown**: Real-time circular progress gauge visually tracking the remaining time until scheduled task execution.
-- **🛡️ Warning & Cancel Protection**: Configurable pre-action notifications and cancellation controls. Verify the warning duration and behavior in the release build.
+- **🛡️ Warning & Cancel Protection**: Configurable pre-action notifications and cancellation controls to help manage scheduled actions.
 - **☕ Keep System Awake ("Don't Sleep")**: Dedicated quick-toggle preventing sleep mode and display power-offs during active downloads or rendering jobs.
 - **📥 System Tray Background Mode**: Minimizes cleanly to the Windows notification area with rapid right-click context menu controls.
-- **⚡ 8 Comprehensive Power Actions**: Covers standard and advanced power routines including hybrid fast-boot bypass.
+- **⚡ 8 Comprehensive Power Actions**: Includes shutdown, full shutdown, restart, hibernate, sleep, log off, lock screen, and keep-awake options.
 - **📅 4 Versatile Scheduling Engines**: Supports countdown timers, specific calendar dates/times, daily repeating routines, and idle detection.
 - **📜 Task History**: Provides a history view for scheduled actions and execution results.
 - **🔇 Silent Mode & Audio Toggles**: Full control over notification sounds, toast popups, and force-termination flags.
@@ -67,13 +67,13 @@ Whether you need to shut down your PC after a multi-hour render, sleep after nig
 | Action | Icon | Technical Execution & Description |
 | :--- | :---: | :--- |
 | **Shutdown** | ⏻ | Requests Windows to shut down; save open work before the scheduled time. |
-| **Full Shutdown** | ⚡ | Requests a non-hybrid shutdown. If the implementation uses `shutdown.exe /s /f /t 0`, `/f` forces applications to close and can cause loss of unsaved work. |
+| **Full Shutdown** | ⚡ | Requests a full shutdown. Save your work first; enabling forced app closure can cause loss of unsaved data. |
 | **Restart** | 🔄 | Requests a Windows restart; save your work before execution. |
 | **Hibernate** | ❄️ | Saves memory to `hiberfil.sys` and completely cuts power; resumes your exact session upon boot. |
 | **Sleep** | 🌙 | Low-power standby state for immediate instant wakeup. |
 | **Log Off** | 🚪 | Signs out the active Windows user session. |
 | **Lock Screen** | 🔒 | Instantly locks the Windows workstation (`LockWorkStation`) to protect privacy. |
-| **Don't Sleep** | ☕ | Uses Windows power requests to prevent automatic idle sleep while the setting is active (implementation details should be confirmed from source). |
+| **Don't Sleep** | ☕ | Helps prevent automatic system sleep while keep-awake mode is active. |
 
 ---
 
@@ -101,16 +101,27 @@ graph TD
 
 ## 🚀 Installation & Download
 
-The Windows release files will be available from the [GitHub Releases page](https://github.com/alarifi/InsightAutoPower/releases) once the first release is published.
+**Insight AutoPower v1.0.0 is available for Windows 10 and Windows 11 (64-bit).**
 
-**Available distribution formats depend on the actual release assets:**
+### 📦 Installer Edition (EXE)
 
-- **Installer (Inno Setup):** Use the installer asset only after it has been built and tested. Do not assume the installer is digitally signed; verify its Authenticode signature separately.
-- **Portable ZIP:** Extract the complete archive, keeping its application files and dependencies together, and start the executable. If the build is *framework-dependent*, the matching **.NET 10 Desktop Runtime** must be installed. If it is *self-contained*, the .NET runtime is included in the package.
+**[⬇ Download Insight AutoPower v1.0.0 — Installer](https://github.com/alarifi/InsightAutoPower/releases/download/v1.0.0/InsightAutoPower_Setup_v1.0.0.exe)**
+
+Run the installer and follow the on-screen instructions.
+
+### 💼 Portable Edition (ZIP)
+
+**[⬇ Download Insight AutoPower v1.0.0 — Portable](https://github.com/alarifi/InsightAutoPower/releases/download/v1.0.0/InsightAutoPower_Portable_v1.0.0.zip)**
+
+Extract the entire ZIP archive to a folder, keep the application files together, and launch the executable. No traditional installation is required.
+
+If the application requests a .NET runtime, install the **[.NET 10 Desktop Runtime (Windows x64)](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)**. The portable package is not claimed to be self-contained.
+
+**[View the official v1.0.0 release and all assets](https://github.com/alarifi/InsightAutoPower/releases/tag/v1.0.0)**
 
 ### Requirements
 
-- Windows 10 or Windows 11, 64-bit (verify on each supported Windows version before publishing).
+- Windows 10 or Windows 11 (64-bit).
 - Administrator approval might be needed for system-level operations in some configurations.
 - Back up open documents and save work before scheduling shutdown, restart, or logoff actions.
 
@@ -120,11 +131,11 @@ The Windows release files will be available from the [GitHub Releases page](http
 
 ## 💻 Tech Stack & Architecture
 
-- **Documented target:** .NET 10 (`net10.0-windows` expected; confirm against the published project build)
+- **Target framework:** .NET 10 (`net10.0-windows`)
 - **Language:** C# (the exact language version depends on the project settings; .NET 10 defaults to C# 14 if not explicitly overridden)
 - **UI:** Windows Presentation Foundation (WPF)
 - **Integration:** Windows notification area, idle activity detection, and Windows power-management APIs
-- **Packaging:** Inno Setup installer and/or portable archive, subject to actual verified build outputs
+- **Distribution:** Windows installer (EXE) and portable archive (ZIP)
 
 **Source availability:** The public GitHub repository is intended for documentation and binary releases; the C# source code is not published here.
 
@@ -159,7 +170,7 @@ The Windows release files will be available from the [GitHub Releases page](http
   - **كشف خمول الجهاز (Idle Detection)**: مراقبة نشاط لوحة المفاتيح والماوس، وتنفيذ الإجراء عند ترك الجهاز دون استخدام.
 
 - **نظام حماية وتنبيهات ذكي**:
-  - إشعار تحذيري قبل التنفيذ مع إمكانية الإلغاء؛ تُراجع مدته ووظائفه في بناء الإصدار الفعلي.
+  - إشعارات تحذيرية قابلة للضبط قبل التنفيذ، مع خيارات الإلغاء.
   - تنبيه صوتي للتذكير.
   - خيار الإغلاق الإجباري للبرامج العالقة (Force close apps).
   - وضع صامت اختياري (Silent mode).
@@ -177,10 +188,14 @@ The Windows release files will be available from the [GitHub Releases page](http
 
 ### التثبيت والتشغيل
 
-تُرفق ملفات التثبيت أو النسخة المحمولة في [صفحة الإصدارات](https://github.com/alarifi/InsightAutoPower/releases) بعد تجهيزها واختبارها. لا تفترض وجود إصدار قابل للتنزيل قبل نشره.
+**الإصدار الرسمي v1.0.0 متاح الآن للتنزيل بنسختين:**
 
-- **نسخة التثبيت**: شغّل ملف المثبّت المعتمد من صفحة الإصدار.
-- **النسخة المحمولة**: فك الضغط عن الأرشيف كاملًا وشغّل البرنامج من مجلده. إذا كانت النسخة معتمدة على إطار التشغيل، فستحتاج إلى **.NET 10 Desktop Runtime**؛ أما النسخة المستقلة (Self-contained) فتتضمن Runtime.
+- **[تحميل نسخة التثبيت (EXE)](https://github.com/alarifi/InsightAutoPower/releases/download/v1.0.0/InsightAutoPower_Setup_v1.0.0.exe)**: شغّل ملف التثبيت واتبع التعليمات التي تظهر على الشاشة.
+- **[تحميل النسخة المحمولة (ZIP)](https://github.com/alarifi/InsightAutoPower/releases/download/v1.0.0/InsightAutoPower_Portable_v1.0.0.zip)**: فك ضغط الأرشيف كاملًا ثم شغّل الملف التنفيذي من داخل المجلد، دون الحاجة إلى تثبيت تقليدي.
+
+إذا طلب البرنامج إطار التشغيل، ثبّت **[.NET 10 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)** المناسب لـ Windows x64.
+
+يمكنك كذلك زيارة **[صفحة الإصدار الرسمي v1.0.0](https://github.com/alarifi/InsightAutoPower/releases/tag/v1.0.0)**.
 
 **تنبيه:** احفظ جميع أعمالك قبل جدولة إيقاف التشغيل أو إعادة التشغيل، لأن الإغلاق الإجباري للتطبيقات قد يسبب فقدان البيانات.
 
