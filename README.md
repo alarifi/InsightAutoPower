@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo/App_logo.png" alt="Insight AutoPower Logo" width="128" height="128" />
+  <img src="src="assets/logo/App.png"" alt="Insight AutoPower Logo" width="128" height="128" />
 </p>
 
 <h1 align="center">Insight AutoPower</h1>
