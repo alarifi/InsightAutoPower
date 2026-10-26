@@ -215,3 +215,16 @@ Proprietary software. All rights reserved. Refer to the license terms provided w
 <p align="center">
   <sub>Built with ❤️ by <strong>INSIGHT Tools</strong> • Empowering Productivity & Smart Automation</sub>
 </p>
+
+
+---
+
+## ⭐ Rate This App | قيّم تجربتك
+
+Have you tried **InsightAutoPower**? Please share an honest 1–5 star rating and suggestions to help us improve.
+
+هل جربت البرنامج؟ شارك تقييمك الصادق من 1 إلى 5 نجوم وملاحظاتك لتساعدنا على تطويره.
+
+**[⭐ Rate this app / قيّم البرنامج](https://github.com/alarifi/InsightAutoPower/issues/new?template=rate-your-experience.yml)**
+
+> GitHub sign-in is required. Reviews posted as Issues are public; do not share private information. The GitHub repository Star button is a separate way to show support, not a 1–5 rating.
